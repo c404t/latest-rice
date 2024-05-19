@@ -1,0 +1,14 @@
+*
+!.gitignore
+!.git/
+
+!.config/!/
+!.config/i3/
+!.config/i3blocks/
+!.config/i3status/
+!.config/picom/
+!.config/lightdm/
+!.config/scripts/
+
+!.vimrc
+!.bashrc

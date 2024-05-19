@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# change volume on interaction
+
+if [[ $BLOCK_BUTTON -eq 4 ]]; then # volume up when scrolling up
+    brightnessctl s 1+
+elif [[ $BLOCK_BUTTON -eq 5 ]]; then # volume down when scrolling down
+    brightnessctl s 1-
+fi
+
+#VOL=$(brightnessctl g) # get last line of amixer output
+    
+    echo $LABEL 
+    echo $LAVEL 

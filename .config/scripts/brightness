@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Define the commands to be executed on each event
+SCROLL_DOWN_COMMAND="brightnessctl set +5"
+SCROLL_UP_COMMAND="brightnessctl set 5-"
+LEFT_CLICK_COMMAND="echo \"Left click\""
+RIGHT_CLICK_COMMAND="echo \"Right click\""
+
+# Use xinput to listen for events
+xinput test-xi2 | while read line; do
+  # Extract the event type and device name from the line
+  EVENT_TYPE=$(echo "$line" | grep -oP 'type=\K[a-zA-Z0-9]+')
+  DEVICE_NAME=$(echo "$line" | grep -oP 'name=\K.+')
+
+  # Check if the event is a scroll event
+  if [ "$EVENT_TYPE" = "scroll" ]; then
+    # Extract the scroll direction from the line
+    SCROLL_DIRECTION=$(echo "$line" | grep -oP 'abs_val=\K[0-9\.]+')
+
+    # Execute the appropriate command based on the scroll direction
+    if [ "$SCROLL_DIRECTION" -gt 0 ]; then
+      $SCROLL_DOWN_COMMAND
+    else
+      $SCROLL_UP_COMMAND
+    fi
+
+  # Check if the event is a button event
+  elif [ "$EVENT_TYPE" = "btn" ]; then
+    # Extract the button number from the line
+    BUTTON_NUMBER=$(echo "$line" | grep -oP 'button=\K[0-9]+')
+
+    # Execute the appropriate command based on the button number
+    if [ "$BUTTON_NUMBER" = "1" ]; then
+      $LEFT_CLICK_COMMAND
+    elif [ "$BUTTON_NUMBER" = "3" ]; then
+      $RIGHT_CLICK_COMMAND
+    fi
+  fi
+
+  # Get the current brightness value
+  BRIGHTNESS=$(brightnessctl g)
+
+  # Output the brightness value in a format that i3blocks can understand
+  echo "brightness $BRIGHTNESS"
+done
+
