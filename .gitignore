@@ -10,3 +10,4 @@
 !.config/lightdm/
 !.config/scripts/
 
+!.bashrc
