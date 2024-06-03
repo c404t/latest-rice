@@ -53,6 +53,8 @@ alias show="exa -l"
 alias showw="exa -la"
 alias sync="sudo pacman -Syu"
 alias ninjaaa="sudo openvpn /etc/openvpn/'ai_duet_OpenVPN-S3-1 (1).ovpn'"
+alias bye="sudo shutdown -h now"
+alias how="ping yahoo.com | lolcat --animate"
 
 ## Automatically correct mistyped 'cd' directories
 #shopt -s cdspell
