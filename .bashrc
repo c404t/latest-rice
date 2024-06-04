@@ -65,7 +65,7 @@ shopt -s histappend
 ## Prevent accidental overwrites when using IO redirection
 set -o noclobber
 
-export PS1="\[\$(tput setaf 4)\] ˚‧₊✩[  \[\$(tput sgr0)\]\[\$(tput setaf 4)\] \h ]₊˚⊹♡ \[\$(tput sgr0)\] \[\$(tput setaf 6)\]\w \[\$(tput sgr0)\]\$ "
+export PS1="\[\$(tput setaf 4)\] [  \[\$(tput sgr0)\]\[\$(tput setaf 4)\] \h ] \[\$(tput sgr0)\] \[\$(tput setaf 6)\]\w \[\$(tput sgr0)\]\$ "
 
 ## Set the prompt to display the current git branch
 ## and use pretty colors
