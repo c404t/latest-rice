@@ -85,26 +85,24 @@ set $mod Mod1
 font pango:Ubuntu Regular 8
 
 # colors 
-set $c1		#161A30
-set $c2		#31304D
-set $c3		#B6BBC4
-set $c4		#F0ECE5
+set $c1		#151515
+set $c2		#A91D3A
+set $c3		#C73659
+set $c4		#EEEEEE
 set $c5		#000000
-set $c6		#15F5BA
+
 
 #                       border          background      text            indicator     
-client.focused          $c4		$c4		$c5		$c4
+client.focused          $c2		$c2		$c5		$c2
 client.unfocused        $c3		$c3		$c4		$c3
 client.focused_inactive $c3		$c3		$c4		$c3
-client.urgent           $c6		$c6		$c5		$c6
+client.urgent           $c2		$c2		$c5		$c6
 
 # default gaps (gaps resize util with mod+shift+g)
-#gaps inner 8
-#gaps outer 2
-gaps inner 4
-gaps outer 2
+gaps inner 0
+gaps outer 0
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 # move apps to workspace
 for_window [class="firefox"] move to workspace $ws3
@@ -139,7 +137,7 @@ exec --no-startup-id flameshot
 exec --no-startup-id "setxkbmap -layout us,ir,ru -option 'grp:ctrl_alt_toggle'"
 #exec --no-startup-id pomodoro-logger
 exec --no-startup-id crow
-exec --no-startup-id kitty | bat ~/Documents/tasks
+#exec --no-startup-id kitty | sl
 #exec --no-startup-id blueman-manager
 
 #################################
@@ -429,18 +427,13 @@ mode "$mode_gaps_left" {
 
 
 # colors (transparent)
-set $d1		#161A3000
-set $p1		#161A3000
-set $d2		#31304D
-set $d3		#B6BBC499
-set $d4		#F0ECE50D
+set $d1		#151515
+set $d2		#A91D3A
+set $d3		#C73659
+set $d4		#EEEEEE
 set $d5		#000000
-set $d6		#15F5BA99
-set $b1     #FF3EA5
-set $b2     #D9ACF599
 
-set $c1     #7E30E1
-set $bgg    #000000
+set $bg     #15151500
 
 bar {
 	status_command i3blocks -c /home/$USER/.config/i3blocks/i3blocks.conf
@@ -453,11 +446,11 @@ bar {
 	font pango:Droid Sans Mono 8 
 
 	colors {
-                background $d1
-                separator  $d1
+                background $bg
+                separator  $bg
                 #                       border          background      text
-                focused_workspace       $b1		$b1		$d5 
-                inactive_workspace      $d1		$d1		$b1
-                urgent_workspace        $c1		$c1		$d5
+                focused_workspace       $d2		$d2		$d4 
+                inactive_workspace      $bg		$bg		$d2
+                urgent_workspace        $d4		$d4		$d1
         }
 }
