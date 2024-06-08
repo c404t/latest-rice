@@ -26,7 +26,7 @@ def create_argparse():
     parser.add_argument(
         '-u',
         '--updates_available_color',
-        default = _default('UPDATE_COLOR', '#F3F8FF'),
+        default = _default('UPDATE_COLOR', '#151515'),
         help='color of the output, when updates are available(default=yellow)'
     )
     parser.add_argument(

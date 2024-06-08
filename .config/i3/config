@@ -85,10 +85,10 @@ set $mod Mod1
 font pango:Ubuntu Regular 8
 
 # colors 
-set $c1		#151515
-set $c2		#A91D3A
-set $c3		#C73659
-set $c4		#EEEEEE
+set $c1		#00FF00
+set $c2		#ADFF2F
+set $c3		#0B4400
+set $c4		#0A2600
 set $c5		#000000
 
 
@@ -427,13 +427,13 @@ mode "$mode_gaps_left" {
 
 
 # colors (transparent)
-set $d1		#151515
-set $d2		#A91D3A
-set $d3		#C73659
-set $d4		#EEEEEE
+set $d1		#00FF00
+set $d2		#ADFF2F
+set $d3		#0B4400
+set $d4		#0A2600
 set $d5		#000000
 
-set $bg     #15151500
+set $bg     #98FF7900
 
 bar {
 	status_command i3blocks -c /home/$USER/.config/i3blocks/i3blocks.conf
