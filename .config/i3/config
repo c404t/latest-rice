@@ -123,7 +123,7 @@ for_window [class="qtcreator"] move to workspace $ws6
 
 
 # auto start (restart on reload)
-exec_always feh --bg-fill ~/Downloads/'Wallpaper(3).jpg'
+exec_always feh --bg-fill ~/Downloads/sls_.png
 #exec_always feh --bg-fill /usr/share/backgrounds/nordic-wallpapers/ign_anime-girls-with-gun.png
 exec_always picom -f
 
